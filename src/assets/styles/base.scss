@@ -47,6 +47,9 @@ table {
 	border-spacing: 0;
 }
 html,body,#app{
-  height: 100%;
-  margin: auto;
+	// 使用px 不希望转换成rem  只需要将px=>PX小写变成大写
+	max-width: 540PX;
+	
+	height: 100%;
+	margin: auto;
 }
