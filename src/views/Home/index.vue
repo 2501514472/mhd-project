@@ -11,45 +11,69 @@
         <div class="header-search"></div>
       </a>
     </header>
+    <!-- <Swiper :autoplay='2000' :loop='true' @change = 'changeHandler'>
+      <SwiperItem >1</SwiperItem>
+      <SwiperItem>2</SwiperItem>
+      <SwiperItem>3</SwiperItem>
+    </Swiper> -->
+    <Swiper>
+      <SwiperItem >1</SwiperItem>
+      <SwiperItem>2</SwiperItem>
+      <SwiperItem>3</SwiperItem>
+    </Swiper>
   </div>
 </template>
 
 <script>
+// 引入抽离出来的插件
+import { Swiper, SwiperItem } from '@/components/Swiper'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Swiper,
+    SwiperItem
+  },
+  methods: {
+    changeHandler (payload) {
+      console.log('index', payload)
+    }
+  }
+
 }
 </script>
 
-<style lang='scss' scoped>
-  .page-home{
+<style lang="scss" scoped>
+.page-home {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .index-header {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    .index-header{
-      display: flex;
-      height: 44px;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      box-sizing: border-box;
-      .user-btn{
-        width: 25px;
-        height: 25px;
-        background: url(~@/assets/icon/user-btn.png);
-        background-size: 100%;
-      }
-      .header-logo{
-        width: 92px;
-        height: 28px;
-        background: url(~@/assets/logo.png) no-repeat;
-        background-size: 100%;
-      }
-      .header-search{
-        width: 25px;
-        height: 25px;
-        background: url(~@/assets/icon/header-search.png);
-        background-size: 100%;
-      }
+    height: 44px;
+    //三者等分平铺
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    .user-btn {
+      width: 25px;
+      height: 25px;
+      background: url(~@/assets/icon/user-btn.png);
+      background-size: 100%;
+    }
+    .header-logo {
+      width: 92px;
+      height: 28px;
+      background: url(~@/assets/logo.png) no-repeat;
+      background-size: 100%;
+    }
+    .header-search {
+      width: 25px;
+      height: 25px;
+      background: url(~@/assets/icon/header-search.png);
+      background-size: 100%;
     }
   }
+}
 </style>
