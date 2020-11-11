@@ -78,3 +78,4 @@ export default {
   background: url("../../assets/icon/dot.png") no-repeat;
   background-size: 100%;
 }
+</style>
