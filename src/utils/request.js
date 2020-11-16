@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Notify } from 'vant'
 const instance = axios.create({
   baseURL: 'http://localhost:8080',
   timeout: 5000
@@ -18,6 +19,8 @@ instance.interceptors.response.use(function (response) {
   return response.data
 }, function (error) {
   // 对响应错误做点什么
+  // 在调用.catch 之前，先需要经过这里
+  Notify({ message: '网络异常，请稍后重试', duration: 1500 })
   return Promise.reject(error)
 })
 export default instance

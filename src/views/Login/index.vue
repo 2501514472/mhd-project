@@ -1,12 +1,12 @@
 <template>
   <div class = 'page-classify'>
-    <h1>分类页面</h1>
+    <h1>登录页面</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Classify'
+  name: 'Login'
 }
 </script>
 
